@@ -1,0 +1,27 @@
+[name]
+	name = Luke Whritenour
+	email = lukewhrit@pm.me
+[alias]
+	ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
+	st = "status"
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[user]
+	signingkey = 9D1C1006B15659AD
+	email = lukewhrit@pm.me
+	name = Luke
+[core]
+	excludesfile = ~/.gitignore_global
+[credential]
+	helper = osxkeychain
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
