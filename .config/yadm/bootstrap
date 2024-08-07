@@ -1,0 +1,70 @@
+#!/bin/bash
+
+system=$(uname -s)
+
+declare -A asdf_plugins
+asdf_plugins[golang]="1.22.5"
+asdf_plugins[nodejs]="22.5.1"
+asdf_plugins[python]="3.12.4"
+
+if [ "$system" = "Darwin" ]; then
+
+  # Install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Updating homebrew bundle"
+    brew bundle --global
+  fi
+
+  # Install programming languages via asdf
+  if [! -d "$HOME/.asdf/" ]; then 
+    echo "Installing asdf"
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+  fi
+
+  # Install and configure iTerm2
+  brew install --cask iterm2 # add a check to see if it's already installed
+
+  if [ -d "$HOME/.iterm2" ]; then
+    echo "Setting iTerm preference folder"
+    defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+  fi
+
+  # Configure shell and prompt
+  if ! command -v "starship" >/dev/null 2>&1; then
+    echo "Installing starship"
+    brew install starship
+  fi
+  # all zpm config is .zshrc and zsh is already installed bc we're on macOS
+
+  # Install VS Codium and load configuration/extensions
+  if ! command -v "codium" >/dev/null 2>&1; then
+    echo "Installing VS Codium"
+    brew install --cask vscodium
+  fi
+
+  # Create symlink to the settings.json file
+  if [ -f "$HOME/.config/vscodium/settings.json" ]; then
+    echo "Creating symlink to VS Codium settings.json"
+    ln -s "$HOME/.config/vscodium/settings.json" "$HOME/Library/Application Support/VSCodium/User/settings.json"
+  fi
+
+  # Runs the install-extensions script. Requires Ruby
+  $HOME/.local/bin/install-extensions
+
+  # Install Docker
+  if ! command -v "docker" >/dev/null 2>&1; then
+    echo "Installing Docker"
+    brew install docker
+  fi
+
+  # Prompt to install other applications
+  \?)
+    echo "No bootstrap procedure for ${system}" >&2
+    exit 1
+    ;;
+fi
