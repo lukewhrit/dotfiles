@@ -1,0 +1,89 @@
+#!/bin/bash
+
+# fix my brain
+alias nano="nvim"
+
+# System reload helpers
+alias \
+	reload.zsh='source ~/.zshrc' \
+	reload.env="source ~/.zshenv" \
+	reload.term="source ~/.zshenv && source ~/.zshrc"
+
+# Make commands faster and more modern
+alias \
+	du="dust" \
+	grep="rg" \
+	ls="eza" \
+	cat="bat"
+
+# Files
+alias \
+	..="cd .." \
+	explorer="open" \
+	sizeof="du"
+
+# Common Options
+alias \
+	mkdir="/bin/mkdir -p" \
+	df="df -h" \
+	free="free -m"
+
+# Git-related aliases
+alias \
+	czc="git add . && cz commit && git push" \
+	yac="yadm commit -am "$(date +%s)" && yadm push" \
+	czi="commitizen init cz-conventional-changelog --yarn --dev --exact"
+
+# Program Shortcuts
+alias \
+	vim="nvim" \
+	nv="nvim" \
+	vi="nvim" \
+	python="python3"
+
+# Command Safety
+alias \
+	mv="mv -i" \
+	rm="rm -i" \
+	cp="cp -i"
+
+# Miscellaneous
+alias \
+	checkemoji="curl https://unicode.org/Public/emoji/13.0/emoji-test.txt | less" \
+	checkutf8="curl https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt | less" \
+	rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+
+# functions
+chpwd() { # run ls after changing directory
+  emulate -L zsh
+  ls
+}
+
+tarr () { 
+  tar -vczf "$1" "$2"
+}
+
+ex() {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1    ;;
+      *.tar.gz)    tar xzf $1    ;;
+      *.bz2)       bunzip2 $1    ;;
+      *.rar)       unrar x $1    ;;
+      *.gz)        gunzip $1     ;;
+      *.tar)       tar xf $1     ;;
+      *.tbz2)      tar xjf $1    ;;
+      *.tgz)       tar xzf $1    ;;
+      *.zip)       unzip $1      ;;
+      *.Z)         uncompress $1 ;;
+      *.7z)        7z x $1       ;;
+      *.deb)       ar x $1       ;;
+      *.tar.xz)    tar xf $1     ;;
+      *.tar.zst)   unzstd $1     ;;      
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
