@@ -1,0 +1,128 @@
+{
+  "breadcrumbs.enabled": true,
+  "color-highlight.markerType": "underline",
+  "[javascript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.renderFinalNewline": "on",
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "editor.fontFamily": "Fantasque Sans Mono, JetBrains Mono, Source Code Pro, Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.suggestSelection": "first",
+  "workbench.statusBar.visible": true,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/tmp": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/bower_components/**": true,
+    "**/dist/**": true
+  },
+  "extensions.ignoreRecommendations": false,
+  "files.associations": {
+    ".prettierrc": "json",
+    ".all-contributorsrc": "json",
+    "*.rasi": "postcss",
+    "**/templates/*.html": "django-html",
+    "**/templates/*": "django-txt"
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.format.semicolons": "remove",
+  "javascript.format.semicolons": "remove",
+  "editor.fontSize": 18,
+  "editor.linkedEditing": true,
+  "javascript.suggestionActions.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.fontFamily": "'Source Code Pro', Fira Code, Consolas, 'Courier New', monospace",
+  "editor.rulers": [80, 81, 100, 101],
+  "explorer.confirmDragAndDrop": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "svelte.enable-ts-plugin": true,
+  "go.toolsManagement.autoUpdate": true,
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "auto-close-tag.activationOnLanguage": [
+    "django-html",
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist"
+  ],
+  "auto-rename-tag.activationOnLanguage": ["django-html", "*"],
+  "html-css-class-completion.HTMLLanguages": [
+    "html",
+    "vue",
+    "razor",
+    "blade",
+    "handlebars",
+    "twig",
+    "django-html",
+    "php",
+    "markdown",
+    "erb",
+    "ejs",
+    "svelte"
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "editor.formatOnSave": true,
+  "workbench.startupEditor": "none",
+  "security.workspace.trust.untrustedFiles": "open"
+}
