@@ -124,5 +124,8 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.formatOnSave": true,
   "workbench.startupEditor": "none",
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "symbols",
+  "git.openRepositoryInParentFolders": "never"
 }

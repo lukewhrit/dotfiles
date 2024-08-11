@@ -30,6 +30,10 @@ fi;
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
+# makefile completions
+zstyle ':completion:*:make:*:targets' call-command true
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+
 ## =============================
 ##  Load plugins  
 ## =============================

@@ -2,10 +2,8 @@
 
 system=$(uname -s)
 
-declare -A asdf_plugins
-asdf_plugins[golang]="1.22.5"
-asdf_plugins[nodejs]="22.5.1"
-asdf_plugins[python]="3.12.4"
+declare -a asdf_plugins
+asdf_plugins=("golang" "nodejs" "python" "elixir" "erlang")
 
 if [ "$system" = "Darwin" ]; then
 
@@ -25,6 +23,14 @@ if [ "$system" = "Darwin" ]; then
     echo "Installing asdf"
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
   fi
+
+  for plugin in "${asdf_plugins[@]}"; do
+    echo "Installing $plugin"
+
+    asdf plugin add $plugin
+    asdf install $plugin latest
+    # Don't need to manually set version; should be set in .tool-versions
+  done
 
   # Install and configure iTerm2
   brew install --cask iterm2 # add a check to see if it's already installed
