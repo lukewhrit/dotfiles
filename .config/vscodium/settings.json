@@ -44,8 +44,13 @@
     ".prettierrc": "json",
     ".all-contributorsrc": "json",
     "*.rasi": "postcss",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "**/templates/*.html": "django-html",
-    "**/templates/*": "django-txt"
+    "**/templates/*": "django-txt",
+    "*.html": "html"
+  },
+  "emmet.includeLanguages": {
+    "django-html": "html"
   },
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
@@ -56,7 +61,10 @@
   "javascript.suggestionActions.enabled": false,
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.fontFamily": "'Source Code Pro', Fira Code, Consolas, 'Courier New', monospace",
-  "editor.rulers": [80, 81, 100, 101],
+  "editor.rulers": [
+    80,
+    100,
+  ],
   "explorer.confirmDragAndDrop": false,
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -103,7 +111,10 @@
     "HTML (Eex)",
     "plist"
   ],
-  "auto-rename-tag.activationOnLanguage": ["django-html", "*"],
+  "auto-rename-tag.activationOnLanguage": [
+    "django-html",
+    "*"
+  ],
   "html-css-class-completion.HTMLLanguages": [
     "html",
     "vue",
@@ -122,10 +133,21 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
   "workbench.startupEditor": "none",
   "security.workspace.trust.untrustedFiles": "open",
   "symbols.hidesExplorerArrows": false,
   "workbench.iconTheme": "symbols",
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "dart.flutterSdkPath": "/Users/whrit/Projects/.flutter/flutter",
+  "dart.openDevTools": "flutter",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
 }

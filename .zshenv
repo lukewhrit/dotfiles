@@ -6,6 +6,7 @@ export \
 
 # Path
 
+PATH+=":${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
 PATH+=":/opt/homebrew/opt/llvm@13/bin"
 PATH+=":$HOME/bin:/usr/local/bin"
 PATH+=":$HOME/.cargo/bin"
@@ -13,6 +14,7 @@ PATH+=":$HOME/.deno/bin"
 PATH+=":$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 PATH+=":$HOME/.local/bin"
 PATH+=":$GOROOT/bin:$GOPATH/bin"
+PATH+=":$HOME/Projects/.flutter/flutter/bin"
 PATH+=":/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 [ -f "/Users/whrit/.ghcup/env" ] && source "/Users/whrit/.ghcup/env" # ghcup-env
@@ -33,7 +35,7 @@ export \
   PAGER="less" \
   BROWSER="firefox"
 
-# Program Configuation
+# Program Configuration
 export \
   PF_INFO="ascii title os host kernel uptime wm pkgs memory" 
 . "$HOME/.cargo/env"

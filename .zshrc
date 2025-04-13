@@ -25,7 +25,7 @@ else
 fi;
 
 # asdf completions
-. "$HOME/.asdf/asdf.sh"
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
@@ -33,6 +33,10 @@ autoload -Uz compinit && compinit
 # makefile completions
 zstyle ':completion:*:make:*:targets' call-command true
 zstyle ':completion:*:*:make:*' tag-order 'targets'
+
+# python completions
+eval "$(register-python-argcomplete pipx)"
+eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 
 ## =============================
 ##  Load plugins  
@@ -97,7 +101,7 @@ bindkey '^H' backward-kill-word
 bindkey '^[[Z' undo
 
 # Aliases
-source .config/aliasrc
+source ~/.config/aliasrc
 
 ## =============================
 ##  Misc. Settings 
@@ -134,3 +138,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
